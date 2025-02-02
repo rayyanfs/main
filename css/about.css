@@ -1,0 +1,206 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  opacity: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 51, 102),
+    rgb(199, 21, 133)
+  ); /* Gradient from bright to deep red */
+  height: 100vh;
+  background-size: cover;
+  overflow: hidden;
+  width: 100vw;
+  position: relative;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+.back {
+  outline: none;
+  border: none;
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  padding: 5px 15px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  margin: 6px 0px 0px 6px;
+}
+
+.back:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.more-hearts {
+  outline: none;
+  border: none;
+  font-size: 20px;
+  position: absolute;
+  right: 0;
+  padding: 5px 15px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: background-color 0.1s ease, transform 0.1s ease;
+  margin: 6px 6px 0px 0px;
+}
+.more-hearts:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.more-hearts:active {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.heart-cont {
+  width: 100px;
+  position: absolute;
+
+  bottom: 0;
+  animation: moveHeart 2s ease-out forwards;
+}
+.heart {
+  width: 100%;
+  object-fit: contain;
+}
+
+@keyframes moveHeart {
+  0% {
+    transform: translateY(30vh); /* Start from bottom (out of viewport) */
+    opacity: 1; /* Fully visible */
+  }
+  50% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translateY(-100vh); /* Move out of view (above the screen) */
+    opacity: 0; /* Fully transparent */
+  }
+}
+
+.heart-drag {
+  width: 150px;
+  cursor: pointer;
+}
+
+/* .drag-container {
+} */
+
+.dragger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.unzila {
+  width: 130px;
+  border-radius: 20px;
+}
+
+.rayyan {
+  width: 150px;
+  border-radius: 20px;
+}
+
+.para {
+  margin: 0 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.main-text {
+  color: white;
+  font-weight: bold;
+  font-family: "Pacifico", cursive;
+  font-size: 80px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+}
+
+.text-cont {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 90px;
+}
+
+.if {
+  color: white;
+  font-weight: bold;
+  font-family: "Pacifico", cursive;
+  font-size: 50px;
+  margin-top: 70px;
+  white-space: nowrap;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.drag-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.verification {
+  margin: 0;
+  border: none;
+  padding: 16px 27px;
+  font-size: 23px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: rgba(255, 22, 22, 0.9);
+  border-radius: 20px;
+  margin-top: 40px;
+  cursor: pointer;
+  transition: transform 0.13s ease, background-color 0.1s ease,
+    box-shadow 0.2s ease;
+}
+
+.verification:hover {
+  background-color: rgba(255, 22, 22, 1);
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+}
+.verification:active {
+  transform: scale(1.1);
+}
+
+.corner-hearts {
+  width: 1000px;
+  position: absolute;
+
+  top: 0;
+  z-index: -1;
+}
+#left {
+  left: 0;
+}
+#right {
+  right: -10px;
+  transform: scaleX(-1);
+}
