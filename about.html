@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SURPRISE</title>
+    <link rel="stylesheet" href="css/about.css" />
+  </head>
+  <body>
+    <button class="more-hearts" onclick="moreHearts()">More Hearts!</button>
+    <button class="back" onclick="window.history.back()">Back</button>
+    <div class="heart-cont">
+      <img class="heart" src="images/heart.png" draggable="false" />
+    </div>
+
+    <div class="text-cont">
+      <p class="main-text">Will you be my valentine?</p>
+
+      <p class="if">If yes....</p>
+    </div>
+
+    <div class="dragger">
+      <div class="drag-container" id="dragContainer">
+        <img class="unzila" src="images/firstpic.jpg" draggable="false" />
+        <img src="images/dragheart.png" class="heart-drag" draggable="true" />
+      </div>
+      <p class="para">Give Rayyan ur heart (drag and drop)</p>
+
+      <div class="drop-container">
+        <img class="rayyan" src="images/secondpic.jpg" draggable="false" />
+      </div>
+    </div>
+    <div class="design">
+      <img
+        class="corner-hearts"
+        id="left"
+        src="images/cornerhearts.png"
+        draggable="false"
+      />
+      <img
+        class="corner-hearts"
+        id="right"
+        src="images/cornerhearts.png"
+        draggable="false"
+      />
+    </div>
+
+    <script src="js/about.js"></script>
+  </body>
+</html>
